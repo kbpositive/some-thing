@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'some-thing';
+  Image: any = null;
+
+  selectFiles(event: any) {
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      this.Image = e.target.result
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
 }
