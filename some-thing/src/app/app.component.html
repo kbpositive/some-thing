@@ -3,8 +3,10 @@
   <input type="file" accept="image/*" multiple (change)="selectFiles($event)">
 </div>
 <div>
-  <img [src]="Image" class="Image">
+  <img [src]="Image" class="Image" style="width:256px;height:256px;">
 </div>
 <div>
-  <input type="text">
+  <form (submit)="onSubmit(action.value)">
+    <input type="text" #action>
+  </form>
 </div>
